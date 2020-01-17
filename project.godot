@@ -23,12 +23,12 @@ config/icon="res://assets/icon.png"
 
 Global="*res://Scripts/AutoLoad/Global.gd"
 Score="*res://Scripts/AutoLoad/Score.gd"
+Utils="*res://Scripts/Utils.gd"
 
 [display]
 
 window/size/width=1366
 window/size/height=768
-window/size/fullscreen=true
 window/size/always_on_top=true
 mouse_cursor/custom_image="res://assets/cursor.png"
 

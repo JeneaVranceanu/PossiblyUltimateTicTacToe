@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/MainScene.gd" type="Script" id=1]
-[ext_resource path="res://assets/main_menu/title.png" type="Texture" id=2]
-[ext_resource path="res://assets/main_menu/label_new_game.png" type="Texture" id=3]
-[ext_resource path="res://assets/main_menu/version.png" type="Texture" id=4]
+[ext_resource path="res://assets/game_bck.png" type="Texture" id=2]
+[ext_resource path="res://assets/Fonts/pricedown.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Scripts/CrazyTitle.gd" type="Script" id=4]
 
 [sub_resource type="StreamTexture" id=1]
 flags = 4
@@ -18,6 +18,21 @@ custom_constants/margin_left = 120
 custom_constants/margin_bottom = 80
 script = ExtResource( 1 )
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+editor/display_folded = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 409.983, 383.373 )
+scale = Vector2( 6.37467, 5.94841 )
+texture = ExtResource( 2 )
+
+[node name="Sprite2" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2( 1224.38, 383.373 )
+scale = Vector2( 6.37467, 5.94841 )
+texture = ExtResource( 2 )
+
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 margin_left = 120.0
 margin_top = 80.0
@@ -27,48 +42,50 @@ mouse_filter = 0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-margin_right = 537.0
+margin_right = 364.0
 margin_bottom = 608.0
 
-[node name="Logo" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-margin_right = 537.0
-margin_bottom = 129.0
-texture = ExtResource( 2 )
-stretch_mode = 3
+[node name="Title" type="Label" parent="HBoxContainer/VBoxContainer"]
+margin_right = 364.0
+margin_bottom = 96.0
+custom_fonts/font = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_outline_modulate = Color( 0.980392, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0.0588235, 0.00392157, 1, 1 )
+custom_constants/shadow_offset_x = 10
+text = "TicTacToe"
+script = ExtResource( 4 )
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-margin_top = 133.0
-margin_right = 537.0
-margin_bottom = 542.0
+margin_top = 100.0
+margin_right = 364.0
+margin_bottom = 608.0
 size_flags_vertical = 3
 custom_constants/separation = 30
 alignment = 1
 
-[node name="New Game Button" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 186.0
-margin_right = 537.0
-margin_bottom = 222.0
-texture_normal = ExtResource( 3 )
-
-[node name="Version" type="TextureRect" parent="HBoxContainer/VBoxContainer"]
-margin_top = 546.0
-margin_right = 537.0
-margin_bottom = 608.0
-texture = ExtResource( 4 )
-stretch_mode = 3
+[node name="New Game" type="Button" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 203.0
+margin_right = 364.0
+margin_bottom = 305.0
+custom_fonts/font = ExtResource( 3 )
+text = "New Game"
+flat = true
 
 [node name="CenterContainer" type="CenterContainer" parent="HBoxContainer"]
-margin_left = 541.0
+margin_left = 368.0
 margin_right = 1126.0
 margin_bottom = 608.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
 [node name="Characters" type="TextureRect" parent="HBoxContainer/CenterContainer"]
-margin_left = 36.0
+margin_left = 123.0
 margin_top = 48.0
-margin_right = 548.0
+margin_right = 635.0
 margin_bottom = 560.0
 texture = SubResource( 1 )
 stretch_mode = 3
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/New Game Button" to="." method="_on_New_Game_Button_pressed"]
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/New Game" to="." method="_on_New_Game_button_pressed"]
