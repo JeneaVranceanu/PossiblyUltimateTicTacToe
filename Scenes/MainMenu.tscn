@@ -24,7 +24,6 @@ mouse_filter = 0
 alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
-editor/display_folded = true
 margin_left = 153.0
 margin_right = 973.0
 margin_bottom = 608.0
@@ -36,7 +35,6 @@ texture = ExtResource( 2 )
 stretch_mode = 3
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
-editor/display_folded = true
 margin_top = 114.0
 margin_right = 820.0
 margin_bottom = 608.0
@@ -45,9 +43,8 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="New Game Button" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
-margin_top = 145.0
 margin_right = 820.0
-margin_bottom = 193.0
+margin_bottom = 48.0
 hint_tooltip = "asda"
 texture_normal = ExtResource( 3 )
 
