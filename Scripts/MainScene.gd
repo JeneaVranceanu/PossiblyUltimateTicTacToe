@@ -14,3 +14,11 @@ extends Node
 
 func _on_New_Game_Button_pressed():
 	Global.start_new_game()
+
+
+func _on_Settings_Button_pressed():
+	print('Settings button pressed')
+
+
+func _on_Exit_Button_pressed():
+	get_tree().quit()

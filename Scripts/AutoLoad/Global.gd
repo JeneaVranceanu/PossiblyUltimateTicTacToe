@@ -10,7 +10,16 @@ func back_to_main_menu():
 	goto_scene("res://Scenes/MainMenu.tscn")	
 	
 func start_new_game():
-	goto_scene("res://Scenes/Game Scene.tscn")	
+	goto_scene("res://Scenes/GameScene.tscn")	
+	
+func choose_opponent_menu():
+	goto_scene("res://Scenes/ChooseOpponentMenu.tscn")
+	
+func choose_mark_menu():
+	goto_scene("res://Scenes/ChooseMarkMenu.tscn")
+	
+func choose_player_game_type():
+	goto_scene("res://Scenes/PlayerMenu.tscn")		
 
 func goto_scene(path):
     # This function will usually be called from a signal callback,

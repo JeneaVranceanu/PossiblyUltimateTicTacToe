@@ -43,8 +43,9 @@ custom_constants/separation = 30
 alignment = 1
 
 [node name="New Game Button" type="TextureButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+margin_top = 145.0
 margin_right = 820.0
-margin_bottom = 48.0
+margin_bottom = 193.0
 hint_tooltip = "asda"
 texture_normal = ExtResource( 3 )
 
@@ -62,5 +63,4 @@ margin_bottom = 349.0
 hint_tooltip = "asda"
 texture_normal = ExtResource( 5 )
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/New Game Button" to="." method="_on_New_Game_Button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Settings Button" to="." method="_on_New_Game_Button_pressed"]
-[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Exit Button" to="." method="_on_New_Game_Button_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/Exit Button" to="." method="_on_Exit_Button_pressed"]
